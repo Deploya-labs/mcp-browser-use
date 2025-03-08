@@ -29,6 +29,8 @@ EXPOSE 8000
 ENV BROWSER_HEADLESS="true" \
     BROWSER_USE_LOGGING_LEVEL="info"
 
+RUN playwright install
+
 # Set the entrypoint to the command that Smithery expects
 ENTRYPOINT ["uv", "run", "src/mcp_server_browser_use/server.py"]
 
