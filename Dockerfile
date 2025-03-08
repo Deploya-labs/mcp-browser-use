@@ -20,7 +20,7 @@ COPY . /app
 RUN pip install --upgrade pip && pip install uv
 
 # Install project dependencies using uv's pip command
-RUN uv pip install .
+RUN pip install .
 
 # Expose the port that the server will listen on (likely 8000)
 EXPOSE 8000
@@ -29,5 +29,8 @@ EXPOSE 8000
 ENV BROWSER_HEADLESS="true" \
     BROWSER_USE_LOGGING_LEVEL="info"
 
-# Use the script entry point directly as defined in pyproject.toml
-CMD ["mcp-server-browser-use"]
+# Set the entrypoint to the command that Smithery expects
+ENTRYPOINT ["uv", "run", "src/mcp_server_browser_use/server.py"]
+
+# Default command if no arguments are provided
+CMD ["--help"]
