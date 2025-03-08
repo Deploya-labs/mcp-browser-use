@@ -17,8 +17,7 @@ WORKDIR /app
 COPY . /app
 
 # Install uv (fast Python package installer) using pip
-RUN pip install --upgrade pip
-RUN pip install uv && pip install playwright && pip install browser-use
+RUN pip install --upgrade pip && pip install uv
 
 # Install project dependencies using uv's pip command
 RUN pip install .
