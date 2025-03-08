@@ -3,37 +3,21 @@ startCommand:
   configSchema:
     type: object
     required:
-      - MCP_MODEL_PROVIDER
+      - OPENROUTER_API_KEY
     properties:
-      MCP_MODEL_PROVIDER:
-        type: string
-        description: "The LLM model provider to use (e.g., 'openrouter', 'anthropic', 'openai', 'azure_openai', etc.)."
       OPENROUTER_API_KEY:
         type: string
-        description: "The API key for OpenRouter integration (if using openrouter)."
-      DEEPSEEK_API_KEY:
-        type: string
-        description: "The API key for DeepSeek integration (if using DeepSeek)."
-      OPENAI_API_KEY:
-        type: string
-        description: "The API key for OpenAI integration (if using OpenAI)."
-      ANTHROPIC_API_KEY:
-        type: string
-        description: "The API key for Anthropic integration (if using Anthropic)."
+        description: "The API key for OpenRouter."
       BROWSER_HEADLESS:
         type: string
-        description: "Set to 'true' to run the browser in headless mode (default is 'false')."
+        description: "Set to 'true' to run the browser in headless mode (default: 'false')."
   commandFunction:
     |-
       (config) => ({
         command: 'mcp-server-browser-use',
         args: [],
         env: {
-          MCP_MODEL_PROVIDER: config.MCP_MODEL_PROVIDER,
-          OPENROUTER_API_KEY: config.DEEPSEEK_API_KEY || '',
-          DEEPSEEK_API_KEY: config.DEEPSEEK_API_KEY || '',
-          OPENAI_API_KEY: config.OPENAI_API_KEY || '',
-          ANTHROPIC_API_KEY: config.ANTHROPIC_API_KEY || '',
+          OPENROUTER_API_KEY: config.OPENROUTER_API_KEY || '',
           BROWSER_HEADLESS: config.BROWSER_HEADLESS || 'false',
           PORT: '8000'
         }
