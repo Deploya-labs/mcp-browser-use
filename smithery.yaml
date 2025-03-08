@@ -7,7 +7,10 @@ startCommand:
     properties:
       MCP_MODEL_PROVIDER:
         type: string
-        description: "The LLM model provider to use (e.g., 'anthropic', 'openai', 'azure_openai', etc.)."
+        description: "The LLM model provider to use (e.g., 'openrouter', 'anthropic', 'openai', 'azure_openai', etc.)."
+      OPENROUTER_API_KEY:
+        type: string
+        description: "The API key for OpenRouter integration (if using openrouter)."
       DEEPSEEK_API_KEY:
         type: string
         description: "The API key for DeepSeek integration (if using DeepSeek)."
@@ -27,6 +30,7 @@ startCommand:
         args: [],
         env: {
           MCP_MODEL_PROVIDER: config.MCP_MODEL_PROVIDER,
+          OPENROUTER_API_KEY: config.DEEPSEEK_API_KEY || '',
           DEEPSEEK_API_KEY: config.DEEPSEEK_API_KEY || '',
           OPENAI_API_KEY: config.OPENAI_API_KEY || '',
           ANTHROPIC_API_KEY: config.ANTHROPIC_API_KEY || '',
