@@ -8,6 +8,9 @@ startCommand:
       OPENROUTER_API_KEY:
         type: string
         description: "The API key for OpenRouter."
+      MCP_MODEL_NAME:
+        type: string
+        description: "The model to use on OpenRouter (default: openai/o3-mini-high)."
       BROWSER_HEADLESS:
         type: string
         description: "Set to 'true' to run the browser in headless mode (default: 'false')."
@@ -18,6 +21,7 @@ startCommand:
         args: [],
         env: {
           OPENROUTER_API_KEY: config.OPENROUTER_API_KEY || '',
+          MCP_MODEL_NAME: config.MCP_MODEL_NAME || '',
           BROWSER_HEADLESS: config.BROWSER_HEADLESS || 'false',
           PORT: '8000'
         }

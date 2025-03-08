@@ -88,8 +88,8 @@ async def run_browser_agent(task: str, add_infos: str = "") -> str:
         window_h = int(os.getenv("BROWSER_WINDOW_HEIGHT", "720"))
 
         # Get agent configuration
-        model_provider = os.getenv("MCP_MODEL_PROVIDER", "anthropic")
-        model_name = os.getenv("MCP_MODEL_NAME", "claude-3-5-sonnet-20241022")
+        model_provider = os.getenv("MCP_MODEL_PROVIDER", "openrouter")
+        model_name = os.getenv("MCP_MODEL_NAME", "openai/o3-mini-high")
         temperature = float(os.getenv("MCP_TEMPERATURE", "0.7"))
         max_steps = int(os.getenv("MCP_MAX_STEPS", "100"))
         use_vision = get_env_bool("MCP_USE_VISION", True)

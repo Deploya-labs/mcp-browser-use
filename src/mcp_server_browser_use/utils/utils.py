@@ -134,7 +134,7 @@ def get_llm_model(provider: str, **kwargs):
         else:
             base_url = kwargs.get("base_url")
 
-        model_name = kwargs.get("model_name", "openai/o3-mini")
+        model_name = kwargs.get("model_name", "openai/o3-mini-high")
         if "r1" in model_name or "aion" in model_name:
             return DeepSeekR1ChatOpenAI(
                 model=model_name,
