@@ -21,7 +21,7 @@ startCommand:
         args: [],
         env: {
           OPENROUTER_API_KEY: config.OPENROUTER_API_KEY || '',
-          MCP_MODEL_NAME: config.MCP_MODEL_NAME || '',
+          MCP_MODEL_NAME: config.MCP_MODEL_NAME || 'openai/o3-mini-high',
           BROWSER_HEADLESS: config.BROWSER_HEADLESS || 'false',
           PORT: '8000'
         }
