@@ -5,7 +5,8 @@ description = "MCP server for browser-use"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
-    { name = "Igor Tarasenko" }
+    { name = "Igor Tarasenko" },
+    { name = "Martin Jakobsson" },
 ]
 license = { text = "MIT" }
 classifiers = [
